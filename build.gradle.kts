@@ -17,6 +17,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-content-negotiation")
     implementation("io.ktor:ktor-serialization-kotlinx-json")
+    implementation("io.ktor:ktor-server-slf4j:3.0.3")
+    implementation("ch.qos.logback:logback-classic:1.4.11")
 }
 
 kotlin {
