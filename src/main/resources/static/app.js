@@ -84,7 +84,12 @@ async function generate() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ salt: params.salt, fat: params.fat, pepper: params.pepper })
         });
-        if (!response.ok) throw new Error('HTTP ' + response.status);
+
+        if (!response.ok) {
+            showError('Не удалось создать колбасу: сервер вернул HTTP ' + response.status);
+            return;
+        }
+
         const recipe = await response.json();
         render(recipe);
     } catch (err) {
