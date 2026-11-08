@@ -113,3 +113,8 @@ docker build -t luxkolbasa .
 
 # Запуск
 docker run --rm -p 8080:8080 luxkolbasa
+```
+
+| Светлая тема              | Тёмная тема             |
+|---------------------------|-------------------------|
+| ![Light](docs/light.png)  | ![Dark](docs/dark.png)  |
