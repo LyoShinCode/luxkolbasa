@@ -32,9 +32,11 @@ fun Application.module() {
     }
 
     routing {
-        staticResources("/", "static") {
-            default("index.html")
+        get("/") {
+            call.respondRedirect("/index.html", permanent = false)
         }
+
+        staticResources("/", "static")
 
         post("/api/generate") {
             val request = runCatching { call.receive<RecipeRequest>() }.getOrNull()
